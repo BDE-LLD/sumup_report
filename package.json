@@ -4,9 +4,13 @@
 	"description": "Lets get data from sumup!",
 	"main": "dist/index.js",
 	"scripts": {
+		"build": "tsc",
 		"start": "node ."
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^18.6.3"
+	}
 }
