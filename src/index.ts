@@ -2,7 +2,6 @@
 import * as readline from "node:readline/promises";
 import { readFileSync } from "node:fs";
 import { stdin as input, stdout as output } from "node:process";
-import { type } from "node:os";
 
 class Csv {
 	private _data: Array<Array<string>>;
