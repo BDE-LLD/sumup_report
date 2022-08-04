@@ -11,3 +11,13 @@ npm run start <csv_path>
 ```
 
 Type help when the program has started
+
+## Docker run
+```sh
+git clone https://github.com/BDE-LLD/sumup_report
+cd sumup_report
+docker build -t sumup_report .
+
+cd {WORK_DIR}
+docker run -v $PWD:/tmp/file sumup_report /tmp/file/{WORK_FILE}.csv
+```
