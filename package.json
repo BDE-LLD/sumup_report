@@ -1,6 +1,6 @@
 {
 	"name": "sumup_report",
-	"version": "1.0.2",
+	"version": "1.0.0",
 	"description": "Lets get data from sumup!",
 	"main": "dist/index.js",
 	"scripts": {
