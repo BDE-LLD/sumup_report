@@ -19,5 +19,5 @@ cd sumup_report
 docker build -t sumup_report .
 
 cd {WORK_DIR}
-docker run -v $PWD:/tmp/file sumup_report /tmp/file/{WORK_FILE}.csv
+docker run -it -v $PWD:/tmp/file sumup_report /tmp/file/{WORK_FILE}.csv
 ```
