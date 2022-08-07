@@ -210,14 +210,14 @@ const cmds: { [key: string]: { description: string; run: Function } } = {
 			const table: {
 				"Event dates": string;
 				Card: number;
-				"Card -2.5%": number;
+				"Card -1.75%": number;
 				Cash: number;
 				Total: number;
 				"Panier moy (€)": number;
 				"Staff's nb": number;
 			} = {
 				"Event dates": [...dates].join(", "),
-				"Card -2.5%": compta.card * 0.975,
+				"Card -1.75%": Math.floor(compta.card * 98.25) / 100,
 				Card: compta.card,
 				Cash: compta.cash,
 				Total: compta.total,
