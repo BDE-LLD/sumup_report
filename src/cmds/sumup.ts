@@ -25,10 +25,10 @@ export const sumup = new Command(
 		const compta = {
 			total: transactions.reduce((prev, curr) => <any>prev + curr.price, 0),
 			cash: transactions
-				.filter((trans) => trans.payment_method === "Cash")
+				.filter((trans) => trans.isCash)
 				.reduce((prev, curr) => <any>prev + curr.price, 0),
 			card: transactions
-				.filter((trans) => trans.payment_method === "Card")
+				.filter((trans) => !trans.isCash)
 				.reduce((prev, curr) => <any>prev + curr.price, 0),
 		};
 		const dates: Set<string> = new Set();

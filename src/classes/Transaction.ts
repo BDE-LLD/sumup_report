@@ -27,4 +27,8 @@ export class Transaction {
 		csv.body.forEach((row) => ret.push(new Transaction(row)));
 		return ret;
 	}
+
+	get isCash() {
+		return this.payment_method === "Cash";
+	}
 }
