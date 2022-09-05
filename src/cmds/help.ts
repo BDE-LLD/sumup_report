@@ -7,11 +7,18 @@ export const help = new Command(
 		usage: "help",
 		aliases: ["h", "?", "man"],
 	},
-	(commands: Set<Command>) => {
-		const table: Array<ICommand> = [];
-		commands.forEach((cmd) => {
-			table.push(cmd.row());
-		});
-		console.table(table);
+	(commands: Set<Command>, command?: string) => {
+		console.group(command || "COMMANDS");
+		if (command) {
+			const cmd = [...commands].find((c) => c.name === command);
+			if (!cmd) return console.error(`command ${command} not found!`);
+			console.log(`${cmd.name}: ${cmd.description}`);
+			console.log(`usage: ${cmd.usage}`);
+			console.log(`aliases: ${cmd.aliases?.join(", ")}`);
+		} else
+			commands.forEach((cmd) =>
+				console.log(`${cmd.name} - ${cmd.description}`)
+			);
+		console.groupEnd();
 	}
 );
